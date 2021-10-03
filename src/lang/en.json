@@ -1,6 +1,7 @@
 {
-  "app.name": "book catalog",
-  "app.noBooks": "no books found",
-  "book.publishedIn": "published in",
-  "book.notFound": "book not found"
+  "app.name": "Book Catalog",
+  "app.noBooks": "No books found",
+  "book.publishedIn": "Published in",
+  "book.notFound": "Book not found",
+  "navigation.back": "Back"
 }
