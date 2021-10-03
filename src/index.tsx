@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { IntlProvider } from 'react-intl';
-import Application from './application';
+import Application from './Application';
 import reportWebVitals from './reportWebVitals';
 import English from './lang/en.json';
 

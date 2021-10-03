@@ -6,7 +6,7 @@ import {
   RouteComponentProps,
   Redirect
 } from 'react-router-dom';
-import './application.css';
+import './Application.css';
 import routes from './config/routes';
 import { BookCatalogStore, StoreProvider } from './stores/BookCatalogStore';
 

@@ -1,6 +1,6 @@
 import IRoute from '../interfaces/route';
-import BookCatalog from '../pages/bookCatalog';
-import Book from '../pages/book';
+import BookCatalog from '../pages/BookCatalog';
+import Book from '../pages/Book';
 
 const routes: Array<IRoute> = [
   {
