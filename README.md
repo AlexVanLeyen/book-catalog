@@ -1,6 +1,6 @@
 # book-catalog :books:
 
-This submission is broken into two parts: the front-end (app), and the back-end (server).
+This submission has two parts: the front end (client) and the back end (server).
 
 ## Running
 
@@ -24,8 +24,8 @@ npm start
 ## Todo
 
 Items to complete:
-- testing with Jest.
-- front-end querying data from backend.
-- further simplify bootup of application.
-- attaching a database (To Confirm)
-- containerization (To Confirm)
+- Testing with Jest.
+- Front end querying data from the back end.
+- Simplify bootup of application.
+- Attaching a database (To Confirm)
+- Containerization (To Confirm)
