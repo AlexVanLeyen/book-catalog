@@ -1,7 +1,7 @@
 import CssBaseline from '@mui/material/CssBaseline';
 import createTheme from '@mui/material/styles/createTheme';
 import ThemeProvider from '@mui/material/styles/ThemeProvider';
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
   BrowserRouter,
   Switch,
@@ -12,19 +12,18 @@ import {
 import './Application.css';
 import Header from './components/Header';
 import routes from './config/routes';
-import { BookCatalogStore, StoreProvider } from './stores/BookCatalogStore';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
-const store = new BookCatalogStore();
+const client = new ApolloClient({
+  uri: 'http://localhost:4000',
+  cache: new InMemoryCache()
+});
+
 const theme = createTheme();
 
 const Application: React.FunctionComponent<{}> = () => {
-  useEffect(() => {
-    (async () => {
-      await store.fetchBooks();
-    })();
-  }, []);
   return (
-    <StoreProvider store={store}>
+    <ApolloProvider client={client}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Header />
@@ -53,7 +52,7 @@ const Application: React.FunctionComponent<{}> = () => {
             </Switch>
         </BrowserRouter>
       </ThemeProvider>
-    </StoreProvider>
+    </ApolloProvider>
   );
 };
 
