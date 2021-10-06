@@ -17,15 +17,17 @@ npm start
 ## Stack
 
 - Frontend: React, Typescript.
-  - Also includes: eslint, MobX (application state management),
+  - Also includes: eslint, Apollo
+
 - Backend: NodeJS(Typescript), GraphQL
-  - Also includes: eslint, express
+  - Also includes: eslint, Apollo
+
+The inclusion of Apollo simplifies the project's backend requirements.
 
 ## Todo
 
 Items to complete:
 - Testing with Jest.
-- Front end querying data from the back end.
 - Simplify bootup of application.
 - Attaching a database (To Confirm)
 - Containerization (To Confirm)
