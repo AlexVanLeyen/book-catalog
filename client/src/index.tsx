@@ -4,14 +4,22 @@ import { IntlProvider } from 'react-intl';
 import Application from './Application';
 import reportWebVitals from './reportWebVitals';
 import English from './lang/en.json';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 const locale = navigator.language;
 const lang = English;
 
+const client = new ApolloClient({
+  uri: process.env.REACT_APP_API_URI ?? 'http://localhost:4000',
+  cache: new InMemoryCache()
+});
+
 ReactDOM.render(
   <React.StrictMode>
     <IntlProvider locale={locale} messages={lang}>
-      <Application />
+      <ApolloProvider client={client}>
+        <Application />
+      </ApolloProvider>
     </IntlProvider>
   </React.StrictMode>,
   document.getElementById('root')

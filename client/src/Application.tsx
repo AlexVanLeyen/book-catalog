@@ -10,16 +10,10 @@ import {
 import './Application.css';
 import Header from './components/Header';
 import routes from './config/routes';
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
-
-const client = new ApolloClient({
-  uri: 'http://localhost:4000',
-  cache: new InMemoryCache()
-});
 
 const Application: React.FunctionComponent<{}> = () => {
   return (
-    <ApolloProvider client={client}>
+    <>
       <CssBaseline />
       <Header />
       <BrowserRouter>
@@ -46,7 +40,7 @@ const Application: React.FunctionComponent<{}> = () => {
             })}
           </Switch>
       </BrowserRouter>
-    </ApolloProvider>
+    </>
   );
 };
 
