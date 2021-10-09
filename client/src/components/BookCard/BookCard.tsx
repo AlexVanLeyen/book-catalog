@@ -8,11 +8,10 @@ type TBookCardProps = {
   onClick?(): void;
 }
 
-const BookCard: React.FunctionComponent<TBookCardProps> = props => {
-  const { book, onClick } = props;
+const BookCard: React.FunctionComponent<TBookCardProps> = ({ book, onClick }) => {
   return (
     <Card>
-      <CardActionArea onClick={onClick}>
+      <CardActionArea onClick={onClick} data-testid="onclick-book-card">
         <Box sx={{ display: 'flex' }} height="15em">
           <Box sx={{ display: 'flex', flexDirection: 'column' }}>
             <CardContent sx={{ flex: '1 0 auto' }}>

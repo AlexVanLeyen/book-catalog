@@ -1,6 +1,4 @@
 import CssBaseline from '@mui/material/CssBaseline';
-import createTheme from '@mui/material/styles/createTheme';
-import ThemeProvider from '@mui/material/styles/ThemeProvider';
 import React from 'react';
 import {
   BrowserRouter,
@@ -19,39 +17,35 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 });
 
-const theme = createTheme();
-
 const Application: React.FunctionComponent<{}> = () => {
   return (
     <ApolloProvider client={client}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Header />
-        <BrowserRouter>
-            <Switch>
-              <Route exact path="/">
-                {/* This redirect was added for demo convenience */}
-                <Redirect to="/books" />
-              </Route>
-              {routes.map((route, index) => {
-                return (
-                  <Route
-                    key={index}
-                    path={route.path}
-                    exact={route.exact}
-                    render={(props: RouteComponentProps<any>) => (
-                      <route.component
-                        name={route.name}
-                        {...props}
-                        {...route.props}
-                      />
-                    )}
-                  />
-                );
-              })}
-            </Switch>
-        </BrowserRouter>
-      </ThemeProvider>
+      <CssBaseline />
+      <Header />
+      <BrowserRouter>
+          <Switch>
+            <Route exact path="/">
+              {/* This redirect was added for demo convenience */}
+              <Redirect to="/books" />
+            </Route>
+            {routes.map((route, index) => {
+              return (
+                <Route
+                  key={index}
+                  path={route.path}
+                  exact={route.exact}
+                  render={(props: RouteComponentProps<any>) => (
+                    <route.component
+                      name={route.name}
+                      {...props}
+                      {...route.props}
+                    />
+                  )}
+                />
+              );
+            })}
+          </Switch>
+      </BrowserRouter>
     </ApolloProvider>
   );
 };
