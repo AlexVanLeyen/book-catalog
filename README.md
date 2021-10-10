@@ -14,20 +14,21 @@ cd server
 npm start
 ```
 
+## Environment Variables
+
+The client supports environment variables. Please see client/.example.env.local for the supported variables.
+
 ## Stack
 
 - Frontend: React, Typescript.
-  - Also includes: eslint, Apollo
+  - Also includes: eslint, Apollo, jest
 
 - Backend: NodeJS(Typescript), GraphQL
   - Also includes: eslint, Apollo
 
 The inclusion of Apollo simplifies the project's backend requirements.
 
-## Todo
+## Additional Features
 
-Items to complete:
-- Testing with Jest.
-- Simplify bootup of application.
-- Attaching a database (To Confirm)
-- Containerization (To Confirm)
+- Internationalization
+- Theming with Material UI
