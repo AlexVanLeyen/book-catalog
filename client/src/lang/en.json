@@ -1,7 +1,9 @@
 {
   "app.name": "Book Catalog",
   "app.noBooks": "No books found",
+  "bookCatalog.error": "An error occurred while requesting for your books.",
   "book.publishedIn": "Published in",
   "book.notFound": "Book not found",
+  "book.error": "An error occurred while retrieving your book.",
   "navigation.back": "Back"
 }

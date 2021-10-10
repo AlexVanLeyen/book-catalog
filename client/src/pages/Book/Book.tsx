@@ -31,7 +31,7 @@ const Book: React.FunctionComponent<RouteComponentProps<TParams>> = ({ match }) 
     <main>
       { loading && <LinearProgress /> }
       <Container sx={{ py: 8 }} maxWidth="md">
-        { error && <Alert severity="error">An error occurred while retrieving your book.</Alert>}
+        { error && <Alert severity="error"><FormattedMessage id="book.error" /></Alert>}
         { !loading && !error &&
           <>
             <Link href="/books"><div style={{ display: 'flex', alignItems: 'center' }}><ArrowBackIosIcon sx={{ fontSize: '1em' }} /><Typography><FormattedMessage id="navigation.back" /></Typography></div></Link>

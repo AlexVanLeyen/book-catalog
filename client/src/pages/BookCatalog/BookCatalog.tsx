@@ -34,7 +34,7 @@ const BookCatalog: React.FunctionComponent<{books: Array<TBook>}> = () => {
       <main>
         { loading && <LinearProgress /> }
         <Container sx={{ py: 8 }} maxWidth="md">
-          { error && <Alert severity="error">An error occurred while requesting for your books.</Alert> }
+          { error && <Alert severity="error"><FormattedMessage id="bookCatalog.error" /></Alert> }
           { !loading && !error &&
             <>
               {data && data.books && data.books.length > 0
