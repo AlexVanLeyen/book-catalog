@@ -5,6 +5,8 @@ import Application from './Application';
 import reportWebVitals from './reportWebVitals';
 import English from './lang/en.json';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { ThemeProvider } from '@mui/material/styles';
+import theme from './themes/default';
 
 const locale = navigator.language;
 const lang = English;
@@ -18,7 +20,9 @@ ReactDOM.render(
   <React.StrictMode>
     <IntlProvider locale={locale} messages={lang}>
       <ApolloProvider client={client}>
-        <Application />
+        <ThemeProvider theme={theme}>
+          <Application />
+        </ThemeProvider>
       </ApolloProvider>
     </IntlProvider>
   </React.StrictMode>,

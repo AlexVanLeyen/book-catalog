@@ -15,7 +15,7 @@ const Book: React.FunctionComponent<TBookProps> = ({ book }) => {
     <>
       <Typography variant="h1">{title}</Typography>
       <Typography variant="body2"><FormattedMessage id="book.publishedIn" /> {year}</Typography>
-      <Divider sx={{ p: 2 }}/>
+      <Divider sx={{ pt: 2, mb: 2 }}/>
       <Typography variant="body1">{description}</Typography>
     </>
   );

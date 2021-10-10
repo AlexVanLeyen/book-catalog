@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import BookCard from '../BookCard/BookCard';
+import CatalogItem from '../CatalogItem';
 import { TBook } from '../../types/book.type';
 import userEvent from '@testing-library/user-event';
 
@@ -13,13 +13,13 @@ const book: TBook = {
 };
 
 test('it renders with the title', () => {
-  render(<BookCard book={book} />);
+  render(<CatalogItem item={book} />);
   expect(screen.getByText(new RegExp(title, 'i'))).toBeInTheDocument();
 });
 
 test('it triggers onClick', () => {
   const onClick = jest.fn();
-  render(<BookCard book={book} onClick={onClick}/>);
+  render(<CatalogItem item={book} onClick={onClick}/>);
   userEvent.click(screen.getByTestId('onclick-book-card'));
   expect(onClick).toHaveBeenCalledTimes(1);
 });

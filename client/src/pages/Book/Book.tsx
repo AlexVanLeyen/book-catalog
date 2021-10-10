@@ -2,6 +2,8 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { RouteComponentProps } from 'react-router-dom';
 import Typography from '@mui/material/Typography';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
@@ -27,10 +29,14 @@ const Book: React.FunctionComponent<RouteComponentProps<TParams>> = ({ match }) 
     <main>
       <Container sx={{ py: 8 }} maxWidth="md">
         <Link href="/books"><div style={{ display: 'flex', alignItems: 'center' }}><ArrowBackIosIcon sx={{ fontSize: '1em' }} /><Typography><FormattedMessage id="navigation.back" /></Typography></div></Link>
-        {data && data?.book
-          ? (<BookComponent book={data.book} />)
-          : (<Typography><FormattedMessage id="book.notFound" /></Typography>)
-        }
+        <Card>
+          <CardContent>
+            {data && data?.book
+              ? (<BookComponent book={data.book} />)
+              : (<Typography><FormattedMessage id="book.notFound" /></Typography>)
+            }
+          </CardContent>
+        </Card>
       </Container>
     </main>
   );
