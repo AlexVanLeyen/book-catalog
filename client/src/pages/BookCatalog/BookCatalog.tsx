@@ -34,21 +34,21 @@ const BookCatalog: React.FunctionComponent<{books: Array<TBook>}> = () => {
       <main>
         { loading && <LinearProgress /> }
         <Container sx={{ py: 8 }} maxWidth="md">
-        { error
-          ? <Alert severity="error">An error occurred while requesting for your books.</Alert>
-          : <>
-            {data && data.books && data.books.length > 0
-              ? <Stack spacing={4}>{data.books.map((book: any) => (
-                  <CatalogItem key={book.id} item={book} onClick={() => onClickBook(book.id)} />
-              ))}</Stack>
-              : <Card>
-                  <CardContent >
-                    <Typography sx={{ textAlign: 'center' }}><FormattedMessage id="app.noBooks" /></Typography>
-                  </CardContent>
-                </Card>
-            }
+          { error && <Alert severity="error">An error occurred while requesting for your books.</Alert> }
+          { !loading && !error &&
+            <>
+              {data && data.books && data.books.length > 0
+                ? <Stack spacing={4}>{data.books.map((book: any) => (
+                    <CatalogItem key={book.id} item={book} onClick={() => onClickBook(book.id)} />
+                ))}</Stack>
+                : <Card>
+                    <CardContent >
+                      <Typography sx={{ textAlign: 'center' }}><FormattedMessage id="app.noBooks" /></Typography>
+                    </CardContent>
+                  </Card>
+              }
             </>
-        }
+          }
         </Container>
       </main>
   );
