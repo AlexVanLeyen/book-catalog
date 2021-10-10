@@ -1,12 +1,14 @@
+import { datatype, lorem, date } from 'faker';
+
 const mocks = {
   Query: () => ({
-    books: () => [...new Array(6)]
+    books: () => [...new Array(10)]
   }),
   Book: () => ({
-    id: () => 'z23e35',
-    title: () => 'Love and Peace',
-    year: () => 1982,
-    description: () => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper finibus augue, id suscipit est vestibulum quis. Praesent pharetra egestas tincidunt. Sed fringilla tristique urna, ac ullamcorper orci suscipit ac. Donec vitae elementum est. Duis semper neque vitae pulvinar pellentesque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam porttitor fringilla felis, id imperdiet urna gravida eu. Donec mattis erat a est iaculis gravida. In mi lectus, condimentum et orci sit amet, consectetur ullamcorper massa. Phasellus tincidunt egestas quam. Nunc non risus elit. Nunc pharetra leo eget eros eleifend tincidunt. Ut elementum dolor nunc, non cursus dolor consectetur nec. Ut convallis a nibh id dictum. Fusce aliquam elit ac rutrum lacinia.'
+    id: () => datatype.uuid(),
+    title: () => lorem.words(3),
+    year: () => date.past(30).getFullYear(),
+    description: () => lorem.paragraph()
   })
 };
 
